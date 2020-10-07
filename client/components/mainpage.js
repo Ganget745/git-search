@@ -27,7 +27,7 @@ const MainPage = () => {
   }
   return (
     <div>
-      <div id="input-field" className="input">
+      <div className="input">
         <InputField />
       </div>
     </div>
