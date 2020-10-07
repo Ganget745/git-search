@@ -25,12 +25,12 @@ const ChooseRepository = () => {
             <div className="cr-user-name" id="repository-name">
               User:{userName}
             </div>
-            <button type="button" id="go-back">
-              <Link to="/">Go Back</Link>
-            </button>
-            <button type="button" id="go-repository-list">
-              <Link to={`/${userName}`}>Go To Repository List</Link>
-            </button>
+            <Link to="/" id="go-back">
+              <button type="button">Go Back</button>
+            </Link>
+            <Link id="go-repository-list" to={`/${userName}`}>
+              <button type="button">Go To Repository List</button>
+            </Link>
           </header>
         </div>
         <div id="description" className="result">
