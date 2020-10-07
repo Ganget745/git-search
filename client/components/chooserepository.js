@@ -28,8 +28,8 @@ const ChooseRepository = () => {
   }
   return (
     <div>
-      <Header title="Hello" />
       <div className="flex items-center justify-center h-screen">
+        <Header title="Hello" />
         <ChooseRepo />
       </div>
     </div>
