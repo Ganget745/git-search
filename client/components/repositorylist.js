@@ -20,10 +20,10 @@ const RepositoryList = () => {
         <div className="form-row">
           <header>
             <div className="git-user-name" id="repository-name">
-              {userName}:
+              User:{userName}
             </div>
-            <Link className="link" to="/" id="go-back">Go Back
-              
+            <Link id="go-back" to="/">
+              <button type="button">Go Back</button>
             </Link>
           </header>
           {ueserrepo.map((it) => (
