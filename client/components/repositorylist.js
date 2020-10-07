@@ -22,7 +22,7 @@ const RepositoryList = () => {
             <div className="git-user-name" id="repository-name">
               User:{userName}
             </div>
-            <Link id="go-back" to="/">
+            <Link id="go-back" className="back-link" to="/">
               <button type="button">Go Back</button>
             </Link>
           </header>
