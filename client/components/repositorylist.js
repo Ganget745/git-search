@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import axios from 'axios'
-import Head from './head'
+import Header from './header'
 import './styles/repositorylist.scss'
 
 const RepositoryList = () => {
@@ -28,7 +28,7 @@ const RepositoryList = () => {
   }
   return (
     <div>
-      <Head title="Hello" />
+      <Header title="Hello" />
       <div className="repo-list">
         <UserRepo />
       </div>

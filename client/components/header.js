@@ -1,31 +1,21 @@
-import React from 'react'
-import { Link, useParams } from 'react-router-dom'
+import React from 'react';
+import { useParams, Link } from 'react-router-dom';
 
 const Header = () => {
-  const { userName } = useParams()
+  const { userName, repositoryName } = useParams()
   return (
-    <div>
-      <div className="cr-row">
-        <header>
-          <div className="cr-user-name" id="repository-name">
-            User:{userName}
-          </div>
-          <Link id="go-back" to="/">
-            Go Back
-          </Link>
-          <Link id="go-repository-list" to={`/${userName}`}>
-            Go To Repository List
-          </Link>
-        </header>
-      </div>
+    <div className="App-header">
+      <div id="repository-name">User: {userName}</div>
+      <Link to="/" id="go-back">
+        Go Back
+      </Link>
+      {repositoryName && (
+        <Link to={`/${userName}`} id="go-repository-list">
+          Back to repository list
+        </Link>
+      )}
     </div>
   )
-}
-
-Header.propTypes = {}
-
-Header.defaultProps = {
-  title: 'skillcrucial.com'
 }
 
 export default Header
