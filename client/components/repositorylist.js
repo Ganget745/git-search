@@ -22,8 +22,10 @@ const RepositoryList = () => {
             <div className="git-user-name" id="repository-name">
               {userName}:
             </div>
-            <button type="button" id="go-back">
-              <Link to="/">Go Back</Link>
+            <button type="button">
+              <Link to="/" id="go-back">
+                Go Back
+              </Link>
             </button>
           </header>
           {ueserrepo.map((it) => (
