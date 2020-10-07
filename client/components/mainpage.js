@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import { history } from '../redux'
-import Head from './head'
 import './styles/mainpage.scss'
 
 const MainPage = () => {
@@ -28,7 +27,6 @@ const MainPage = () => {
   }
   return (
     <div>
-      <Head title="Hello" />
       <div id="input-field" className="input">
         <InputField />
       </div>

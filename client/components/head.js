@@ -1,19 +1,27 @@
 import React from 'react'
-import PropTypes from 'prop-types'
-import { Helmet } from 'react-helmet'
+import { Link, useParams } from 'react-router-dom'
 
-const Head = (props) => (
-  <Helmet>
-    <title>SkillCrucial Boilerplate - {props.title}</title>
-    <meta charSet="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#FF0000" />
-  </Helmet>
-)
-
-Head.propTypes = {
-  title: PropTypes.string
+const Head = () => {
+  const { userName } = useParams()
+  return (
+    <div>
+      <form className="ui-form">
+        <div className="form-row">
+          <header>
+            <div className="git-user-name" id="repository-name">
+              User: {userName}
+            </div>
+            <Link id="go-back" to="/">
+              <button type="button">Go Back</button>
+            </Link>
+          </header>
+        </div>
+      </form>
+    </div>
+  )
 }
+
+Head.propTypes = {}
 
 Head.defaultProps = {
   title: 'skillcrucial.com'

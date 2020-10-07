@@ -14,18 +14,9 @@ const RepositoryList = () => {
         setUserrepo(it.data)
       })
     }, [])
-
     return (
       <form className="ui-form">
         <div className="form-row">
-          <header>
-            <div className="git-user-name" id="repository-name">
-              User:{userName}
-            </div>
-            <Link id="go-back" className="back-link" to="/">
-              <button type="button">Go Back</button>
-            </Link>
-          </header>
           {ueserrepo.map((it) => (
             <Link key={it.full_name} to={`/${it.full_name}`}>
               <p>{it.full_name}</p>
