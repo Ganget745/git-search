@@ -12,7 +12,7 @@ const Head = () => {
               User: {userName}
             </div>
             <Link id="go-back" to="/">
-              <button type="button">Go Back</button>
+              Go Back
             </Link>
           </header>
         </div>

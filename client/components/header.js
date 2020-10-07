@@ -11,10 +11,10 @@ const Header = () => {
             User:{userName}
           </div>
           <Link id="go-back" to="/">
-            <button type="button">Go Back</button>
+            Go Back
           </Link>
           <Link id="go-repository-list" to={`/${userName}`}>
-            <button type="button">Go To Repository List</button>
+            Go To Repository List
           </Link>
         </header>
       </div>
