@@ -12,14 +12,17 @@ import DummyView from '../components/dummy-view'
 import NotFound from '../components/404'
 
 import Startup from './startup'
+import MainPage from '../components/mainpage'
+import RepositoryList from '../components/repositorylist'
+import ChooseRepository from '../components/chooserepository'
 
 const OnlyAnonymousRoute = ({ component: Component, ...rest }) => {
   const func = (props) =>
     !!rest.user && !!rest.user.name && !!rest.token ? (
       <Redirect to={{ pathname: '/' }} />
     ) : (
-      <Component {...props} />
-    )
+        <Component {...props} />
+      )
   return <Route {...rest} render={func} />
 }
 
@@ -28,12 +31,7 @@ const PrivateRoute = ({ component: Component, ...rest }) => {
     !!rest.user && !!rest.user.name && !!rest.token ? (
       <Component {...props} />
     ) : (
-      <Redirect
-        to={{
-          pathname: '/login'
-        }}
-      />
-    )
+        <Redirect to={{ pathname: '/login' }} />)
   return <Route {...rest} render={func} />
 }
 
@@ -72,7 +70,9 @@ const RootComponent = (props) => {
       <RouterSelector history={history} location={props.location} context={props.context}>
         <Startup>
           <Switch>
-            <Route exact path="/" component={() => <DummyView />} />
+            <Route exact path="/" component={() => <MainPage />} />
+            <Route exact path="/:userName" component={() => <RepositoryList />} />
+            <Route exact path="/:userName/:repositoryName" component={() => <ChooseRepository />} />
             <Route exact path="/dashboard" component={() => <Home />} />
             <PrivateRoute exact path="/hidden-route" component={() => <DummyView />} />
             <Route component={() => <NotFound />} />
