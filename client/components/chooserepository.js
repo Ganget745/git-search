@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import axios from 'axios'
+
 import Header from './header'
+
 import './styles/chooserepository.scss'
 
 const ReactMarkdown = require('react-markdown')
@@ -9,7 +11,6 @@ const ReactMarkdown = require('react-markdown')
 const ChooseRepository = () => {
   const { userName } = useParams()
   const { repositoryName } = useParams()
-  const ChooseRepo = () => {
     const [chooserepo, setChooserepo] = useState()
     useEffect(() => {
       axios
@@ -19,21 +20,26 @@ const ChooseRepository = () => {
         })
     }, [])
     return (
-      <form className="cr-form">
-        <div id="description" className="result">
-          <ReactMarkdown source={chooserepo} />
+      <div className="repo-content">
+        <div className="container">
+          <div className="row justify-content-center text-center">
+
+            <form className="cr-form">
+              <div className="row">
+                <Header />
+              </div>
+              <div className="col-12 pad_0">
+                <div id="description" className="description">
+                  <ReactMarkdown source={chooserepo} />
+                </div>
+              </div>
+            </form>
+
+          </div>
         </div>
-      </form>
-    )
-  }
-  return (
-    <div>
-      <div className="flex items-center justify-center h-screen">
-        <Header title="Hello" />
-        <ChooseRepo />
       </div>
-    </div>
-  )
+    )
+
 }
 
 ChooseRepository.propTypes = {}
